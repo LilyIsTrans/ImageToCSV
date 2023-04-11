@@ -3,10 +3,10 @@ use std::fs::File;
 use std::io::Write;
 use std::path::Path;
 use image::io::Reader;
-use rayon::prelude::{self, IntoParallelRefIterator, ParallelIterator, ParallelBridge};
+use rayon::prelude::{IntoParallelRefIterator, ParallelIterator, ParallelBridge};
 
 fn main() {
-    let mut arguments: Vec<String> = env::args().skip(1).collect();
+    let arguments: Vec<String> = env::args().skip(1).collect();
     arguments.par_iter().for_each(|argument| {
         let source_file = Path::new(&argument);
         let mut dest_file = source_file.to_path_buf();
