@@ -3,7 +3,7 @@ use std::fs::File;
 use std::io::Write;
 use std::path::Path;
 use image::io::Reader;
-use rayon::prelude::{IntoParallelRefIterator, ParallelIterator, ParallelBridge};
+use rayon::prelude::{IntoParallelRefIterator, ParallelIterator};
 
 fn main() {
     let arguments: Vec<String> = env::args().skip(1).collect();
